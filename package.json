@@ -1,0 +1,25 @@
+{
+  "name": "personalbudget",
+  "version": "1.0.0",
+  "description": "Aplicatie web pentru buget personal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StroiaAdina/PersonalBudget.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/StroiaAdina/PersonalBudget/issues"
+  },
+  "homepage": "https://github.com/StroiaAdina/PersonalBudget#readme",
+  "dependencies": {
+    "better-sqlite3": "^13.2.0",
+    "express": "^5.3.0"
+  }
+}
