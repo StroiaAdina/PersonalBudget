@@ -29,7 +29,7 @@
   </nav>
 
   <!-- CONTINUT PRINCIPAL -->
-  <main class="container my-4">
+   <main class="container my-4">
 
     <h1 class="mb-4">Bună, Maria!</h1>
 
@@ -39,7 +39,7 @@
         <div class="card summary-card">
           <div class="card-body">
             <p class="label">Sold curent</p>
-            <p class="value">2.450 lei</p>
+            <p class="value" id="sold">...</p>
           </div>
         </div>
       </div>
@@ -47,7 +47,7 @@
         <div class="card summary-card">
           <div class="card-body">
             <p class="label">Venituri luna aceasta</p>
-            <p class="value text-income">4.200 lei</p>
+            <p class="value text-income" id="venituri">...</p>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
         <div class="card summary-card">
           <div class="card-body">
             <p class="label">Cheltuieli luna aceasta</p>
-            <p class="value text-expense">1.750 lei</p>
+            <p class="value text-expense" id="cheltuieli">...</p>
           </div>
         </div>
       </div>
@@ -75,15 +75,10 @@
                 <thead>
                   <tr><th>Data</th><th>Descriere</th><th>Categorie</th><th class="text-end">Sumă</th></tr>
                 </thead>
-                <tbody>
-                  <tr><td>15.11.2026</td><td>Cumpărături Kaufland</td><td>Mâncare</td><td class="text-end text-expense">-185 lei</td></tr>
-                  <tr><td>14.11.2026</td><td>Abonament metrou</td><td>Transport</td><td class="text-end text-expense">-80 lei</td></tr>
-                  <tr><td>12.11.2026</td><td>Cinema</td><td>Distracție</td><td class="text-end text-expense">-45 lei</td></tr>
-                  <tr><td>10.11.2026</td><td>Factură internet</td><td>Utilități</td><td class="text-end text-expense">-60 lei</td></tr>
-                  <tr><td>05.11.2026</td><td>Salariu</td><td>Venit</td><td class="text-end text-income">+4.200 lei</td></tr>
-                </tbody>
+                <tbody id="ultimele-tranzactii"></tbody>
               </table>
             </div>
+            <p class="text-muted d-none" id="mesaj-gol">Nu ai nicio tranzacție încă.</p>
           </div>
         </div>
       </div>
@@ -92,31 +87,20 @@
       <div class="col-12 col-lg-5">
         <div class="card">
           <div class="card-body">
-            <h2 class="h5 mb-3">Cheltuieli pe categorii</h2>
-
-            <p class="mb-1">Mâncare <span class="float-end">650 / 800 lei</span></p>
-            <div class="progress mb-3"><div class="progress-bar bar-ok" style="width: 81%"></div></div>
-
-            <p class="mb-1">Transport <span class="float-end">320 / 400 lei</span></p>
-            <div class="progress mb-3"><div class="progress-bar bar-ok" style="width: 80%"></div></div>
-
-            <p class="mb-1">Distracție <span class="float-end">380 / 300 lei</span></p>
-            <div class="progress mb-3"><div class="progress-bar bar-over" style="width: 100%"></div></div>
-
-            <p class="mb-1">Utilități <span class="float-end">400 / 500 lei</span></p>
-            <div class="progress"><div class="progress-bar bar-ok" style="width: 80%"></div></div>
+            <h2 class="h5 mb-3">Cheltuieli pe categorii (luna aceasta)</h2>
+            <div id="pe-categorii"></div>
+            <p class="text-muted d-none" id="mesaj-gol-categorii">Nu ai cheltuieli luna aceasta.</p>
           </div>
         </div>
       </div>
     </div>
 
   </main>
-
-  <!-- SUBSOL -->
   <footer class="app-footer text-center py-3 mt-4">
     <p class="mb-0">&copy; 2026 BugetulMeu. Proiect pentru Programare Multimedia.</p>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- SUBSOL -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>

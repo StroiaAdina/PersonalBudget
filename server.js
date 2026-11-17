@@ -102,6 +102,42 @@ app.delete('/api/tranzactii/:id', (req, res) => {
   db.prepare('DELETE FROM transactions WHERE id = ? AND user_id = 1').run(req.params.id);
   res.json({ ok: true });
 });
+// ===== REZUMAT PENTRU PAGINA PRINCIPALĂ =====
+app.get('/api/rezumat', (req, res) => {
+  const luna = new Date().toISOString().slice(0, 7); // ex: 2026-11
+
+  const sold = db.prepare(
+    "SELECT COALESCE(SUM(CASE WHEN tip = 'venit' THEN suma ELSE -suma END), 0) AS v FROM transactions WHERE user_id = 1"
+  ).get().v;
+
+  const venituri = db.prepare(
+    "SELECT COALESCE(SUM(suma), 0) AS v FROM transactions WHERE user_id = 1 AND tip = 'venit' AND data LIKE ?"
+  ).get(luna + '%').v;
+
+  const cheltuieli = db.prepare(
+    "SELECT COALESCE(SUM(suma), 0) AS v FROM transactions WHERE user_id = 1 AND tip = 'cheltuiala' AND data LIKE ?"
+  ).get(luna + '%').v;
+
+  const ultimele = db.prepare(`
+    SELECT t.suma, t.tip, t.data, t.descriere, c.nume AS categorie
+    FROM transactions t
+    JOIN categories c ON t.category_id = c.id
+    WHERE t.user_id = 1
+    ORDER BY t.data DESC, t.id DESC
+    LIMIT 5
+  `).all();
+
+  const peCategorii = db.prepare(`
+    SELECT c.nume AS categorie, SUM(t.suma) AS total
+    FROM transactions t
+    JOIN categories c ON t.category_id = c.id
+    WHERE t.user_id = 1 AND t.tip = 'cheltuiala' AND t.data LIKE ?
+    GROUP BY c.id
+    ORDER BY total DESC
+  `).all(luna + '%');
+
+  res.json({ sold, venituri, cheltuieli, ultimele, peCategorii });
+});
 app.listen(PORT, () => {
   console.log('Serverul rulează pe portul ' + PORT);
 });
