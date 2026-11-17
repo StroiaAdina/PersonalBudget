@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BugetulMeu - Pagina principală</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- MENIU -->
+  <nav class="navbar navbar-expand-lg navbar-dark app-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">BugetulMeu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#meniu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="meniu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Acasă</a></li>
+          <li class="nav-item"><a class="nav-link" href="tranzactii.html">Tranzacții</a></li>
+          <li class="nav-item"><a class="nav-link" href="categorii.html">Categorii</a></li>
+        </ul>
+        <a class="btn btn-accent" href="login.html">Autentificare</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTINUT PRINCIPAL -->
+  <main class="container my-4">
+
+    <h1 class="mb-4">Bună, Maria!</h1>
+
+    <!-- Carduri rezumat -->
+    <div class="row g-3 mb-4">
+      <div class="col-12 col-md-4">
+        <div class="card summary-card">
+          <div class="card-body">
+            <p class="label">Sold curent</p>
+            <p class="value">2.450 lei</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4">
+        <div class="card summary-card">
+          <div class="card-body">
+            <p class="label">Venituri luna aceasta</p>
+            <p class="value text-income">4.200 lei</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4">
+        <div class="card summary-card">
+          <div class="card-body">
+            <p class="label">Cheltuieli luna aceasta</p>
+            <p class="value text-expense">1.750 lei</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <!-- Ultimele tranzactii -->
+      <div class="col-12 col-lg-7">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h2 class="h5 mb-0">Ultimele tranzacții</h2>
+              <a class="btn btn-sm btn-accent" href="tranzactii.html">Adaugă tranzacție</a>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-middle">
+                <thead>
+                  <tr><th>Data</th><th>Descriere</th><th>Categorie</th><th class="text-end">Sumă</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>15.11.2026</td><td>Cumpărături Kaufland</td><td>Mâncare</td><td class="text-end text-expense">-185 lei</td></tr>
+                  <tr><td>14.11.2026</td><td>Abonament metrou</td><td>Transport</td><td class="text-end text-expense">-80 lei</td></tr>
+                  <tr><td>12.11.2026</td><td>Cinema</td><td>Distracție</td><td class="text-end text-expense">-45 lei</td></tr>
+                  <tr><td>10.11.2026</td><td>Factură internet</td><td>Utilități</td><td class="text-end text-expense">-60 lei</td></tr>
+                  <tr><td>05.11.2026</td><td>Salariu</td><td>Venit</td><td class="text-end text-income">+4.200 lei</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cheltuieli pe categorii -->
+      <div class="col-12 col-lg-5">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="h5 mb-3">Cheltuieli pe categorii</h2>
+
+            <p class="mb-1">Mâncare <span class="float-end">650 / 800 lei</span></p>
+            <div class="progress mb-3"><div class="progress-bar bar-ok" style="width: 81%"></div></div>
+
+            <p class="mb-1">Transport <span class="float-end">320 / 400 lei</span></p>
+            <div class="progress mb-3"><div class="progress-bar bar-ok" style="width: 80%"></div></div>
+
+            <p class="mb-1">Distracție <span class="float-end">380 / 300 lei</span></p>
+            <div class="progress mb-3"><div class="progress-bar bar-over" style="width: 100%"></div></div>
+
+            <p class="mb-1">Utilități <span class="float-end">400 / 500 lei</span></p>
+            <div class="progress"><div class="progress-bar bar-ok" style="width: 80%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SUBSOL -->
+  <footer class="app-footer text-center py-3 mt-4">
+    <p class="mb-0">&copy; 2026 BugetulMeu. Proiect pentru Programare Multimedia.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

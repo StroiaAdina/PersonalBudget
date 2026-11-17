@@ -1,0 +1,93 @@
+/* ===== Culorile proiectului ===== */
+:root {
+  --verde: #2E7D6B;
+  --galben: #F4B942;
+  --albastru: #1F2A44;
+  --fundal: #F5F7FA;
+  --rosu: #E4572E;
+}
+
+/* ===== General ===== */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--fundal);
+  color: var(--albastru);
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+/* ===== Meniu ===== */
+.app-navbar {
+  background-color: var(--albastru);
+}
+
+.app-navbar .nav-link.active {
+  color: var(--galben);
+}
+
+/* ===== Butoane ===== */
+.btn-accent {
+  background-color: var(--galben);
+  color: var(--albastru);
+  font-weight: 500;
+  border: none;
+}
+
+.btn-accent:hover {
+  background-color: #e0a52f;
+  color: var(--albastru);
+}
+
+/* ===== Carduri ===== */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(31, 42, 68, 0.08);
+}
+
+.summary-card .label {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.summary-card .value {
+  margin-bottom: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* ===== Culori pentru sume ===== */
+.text-income {
+  color: var(--verde);
+  font-weight: 500;
+}
+
+.text-expense {
+  color: var(--rosu);
+  font-weight: 500;
+}
+
+/* ===== Bare de progres ===== */
+.progress {
+  height: 10px;
+}
+
+.bar-ok {
+  background-color: var(--verde);
+}
+
+.bar-over {
+  background-color: var(--rosu);
+}
+
+/* ===== Subsol ===== */
+.app-footer {
+  background-color: var(--albastru);
+  color: #ffffff;
+  font-size: 0.9rem;
+}
