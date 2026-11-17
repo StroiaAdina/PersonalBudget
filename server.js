@@ -1,8 +1,10 @@
 const express = require('express');
+const db = require('./db');
+
 const app = express();
 const PORT = 3000;
 
-// Folderul "public" conține paginile site-ului
+app.use(express.json());
 app.use(express.static('public'));
 
 app.listen(PORT, () => {
